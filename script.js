@@ -17,7 +17,17 @@ function buildFolderTree(structure, parentElement, level = 0) {
         if (level === 1) item.classList.add("subfolder");
         if (level === 2) item.classList.add("subsubfolder");
 
-        item.textContent = key;
+        // Створюємо елементи стрілки і тексту окремо
+        const arrow = document.createElement("span");
+        arrow.classList.add("arrow");
+        arrow.textContent = typeof structure[key] === "object" ? "▸" : "";
+
+        const label = document.createElement("span");
+        label.classList.add("label");
+        label.textContent = key;
+
+        item.appendChild(arrow);
+        item.appendChild(label);
         parentElement.appendChild(item);
 
         // Якщо це кінцева папка з файлом
@@ -29,15 +39,19 @@ function buildFolderTree(structure, parentElement, level = 0) {
         // Якщо це підпапка
         if (typeof structure[key] === "object") {
             const subList = document.createElement("ul");
-            subList.classList.add("folder-list", "hidden"); // Зробимо вкладені підпапки схованими
-            item.appendChild(subList);
+            subList.classList.add("folder-list", "hidden");
+            parentElement.appendChild(subList);
             buildFolderTree(structure[key], subList, level + 1);
 
-            // Показ/сховати вкладені
             item.addEventListener("click", (e) => {
-                e.stopPropagation(); // Запобігаємо поширенню події на батьківські елементи
-                subList.classList.toggle("hidden"); // Показати або сховати підпапки
-                item.classList.toggle("expanded");  // Змінюємо іконку
+                e.stopPropagation();
+                subList.classList.toggle("hidden");
+                item.classList.toggle("expanded");
+
+                const arrowEl = item.querySelector(".arrow");
+                if (arrowEl) {
+                    arrowEl.textContent = item.classList.contains("expanded") ? "▼" : "▸";
+                }
             });
         }
     }
@@ -56,7 +70,7 @@ function loadWords(folderItem) {
     fetch(`Words/${filePath}`)
         .then(response => response.text())
         .then(text => {
-            const lines = text.trim().split("\n");
+            const lines = text.trim().split("\n").slice(1);  // Пропускаємо перший рядок
             const wordPairs = lines.map(line => {
                 const [term, def] = line.split("/").map(x => x.trim());
                 return { term, def };
