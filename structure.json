@@ -1,0 +1,10 @@
+{
+    "Англійська мова": {
+      "Іменники": "English/Nouns.txt",
+      "Дієслова": "English/Verbs.txt"
+    },
+    "Історія України": {
+      "Київська Русь": "History/KyivskaRus.txt",
+      "Галицько-Волинська держава": "History/Halychyna.txt"
+    }
+  }

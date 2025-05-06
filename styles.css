@@ -11,10 +11,11 @@ body {
 }
 
 .sidebar {
-    width: 220px;
+    width: 260px;
     background-color: #e6cba8;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
 }
 
 .sidebar h2 {
@@ -24,17 +25,18 @@ body {
 
 .folder-list {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     margin: 0;
 }
 
 .folder {
     padding: 10px 15px;
-    margin: 8px 0;
+    margin: 5px 0;
     background-color: #f1d6b6;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s;
+    position: relative;
 }
 
 .folder:hover {
@@ -45,6 +47,25 @@ body {
     background-color: #d2a679;
     color: white;
     font-weight: bold;
+}
+
+.folder::before {
+    content: "▸";
+    position: absolute;
+    left: 10px;
+    transition: transform 0.2s;
+}
+
+.folder.expanded::before {
+    content: "▼";
+}
+
+.folder.subfolder {
+    padding-left: 30px;
+}
+
+.folder.subsubfolder {
+    padding-left: 50px;
 }
 
 .content {
