@@ -1,3 +1,4 @@
+/* Основні стилі для body та контейнера */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -8,8 +9,10 @@ body {
 .container {
     display: flex;
     min-height: 100vh;
+    flex-direction: row;
 }
 
+/* Сайдбар */
 .sidebar {
     width: 260px;
     background-color: #e6cba8;
@@ -23,6 +26,7 @@ body {
     font-size: 20px;
 }
 
+/* Список папок */
 .folder-list {
     list-style: none;
     padding-left: 0;
@@ -48,6 +52,7 @@ body {
     background-color: #d2a679;
     color: white;
     font-weight: bold;
+    border: 2px solid #fff;
 }
 
 .folder::before {
@@ -70,15 +75,21 @@ body {
     padding-left: 50px;
 }
 
+/* Плавне розгортання підпапок */
 .folder-list .folder > ul {
     display: none; /* Сховати підпапки за замовчуванням */
     margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
 }
 
 .folder.expanded > ul {
-    display: block; /* Показати підпапки, якщо папка розгорнута */
+    display: block;
+    max-height: 1000px; /* Збільшено для розгортання */
 }
 
+/* Основний контент */
 .content {
     flex-grow: 1;
     padding: 30px;
@@ -89,30 +100,57 @@ body {
     margin-bottom: 20px;
 }
 
+/* Список слів */
 .word-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 15px;
 }
 
+/* Картки слів */
 .word-card {
     background-color: #fff6e9;
     border: 1px solid #dec8a2;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s ease-in-out;
 }
 
 .word-card:hover {
     transform: translateY(-3px);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); /* Збільшено тінь при наведенні */
 }
 
+/* Футер */
 footer {
     text-align: center;
-    padding: 12px;
+    padding: 20px;
     background-color: #e6cba8;
-    font-size: 14px;
+    font-size: 16px;
     color: #6e5344;
     border-top: 1px solid #dec8a2;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .word-list {
+        grid-template-columns: 1fr; /* Один стовпець для мобільних */
+    }
 }
