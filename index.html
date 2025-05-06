@@ -14,6 +14,22 @@
             <h2>Шаблони</h2>
             <ul class="folder-list">
                 <!-- Тут динамічно з'являться папки/підпапки -->
+
+                <button id="startGameButton">Перейти в гру</button>
+
+                <script>
+                const startGameButton = document.getElementById("startGameButton");
+                startGameButton.addEventListener("click", () => {
+                    if (selectedFilePath) {
+                    // Створюємо deeplink
+                    const deeplink = `linkitwords://loadfile?file=${selectedFilePath}`;
+                    // Відкриваємо deeplink (це запустить гру)
+                    window.location.href = deeplink;
+                    } else {
+                    alert("Будь ласка, виберіть файл!");
+                    }
+                });
+                </script>
             </ul>
         </aside>
 
@@ -24,22 +40,6 @@
             </div>
         </main>
     </div>
-
-    <button id="startGameButton">Перейти в гру</button>
-
-    <script>
-    const startGameButton = document.getElementById("startGameButton");
-    startGameButton.addEventListener("click", () => {
-        if (selectedFilePath) {
-        // Створюємо deeplink
-        const deeplink = `linkitwords://loadfile?file=${selectedFilePath}`;
-        // Відкриваємо deeplink (це запустить гру)
-        window.location.href = deeplink;
-        } else {
-        alert("Будь ласка, виберіть файл!");
-        }
-    });
-    </script>
 
     <footer>
         By Styasik
