@@ -15,22 +15,8 @@
             <ul class="folder-list">
                 <!-- Тут динамічно з'являться папки/підпапки -->
 
-                <button id="startGameButton">Перейти в гру</button>
-
-                <script>
-                const startGameButton = document.getElementById("startGameButton");
-                startGameButton.addEventListener("click", () => {
-                    if (selectedFilePath) {
-                    // Створюємо deeplink
-                    const deeplink = `linkitwords://loadfile?file=${selectedFilePath}`;
-                    // Відкриваємо deeplink (це запустить гру)
-                    window.location.href = deeplink;
-                    } else {
-                    alert("Будь ласка, виберіть файл!");
-                    }
-                });
-                </script>
             </ul>
+            <button id="startGameButton" class="start-game-btn">Відкрити в грі</button>
         </aside>
 
         <main class="content">

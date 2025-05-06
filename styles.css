@@ -111,6 +111,24 @@ body {
     transform: translateY(-3px);
 }
 
+.start-game-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #009578;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.start-game-btn:hover {
+    background-color: #007e66;
+}
+
 footer {
     text-align: center;
     padding: 12px;
