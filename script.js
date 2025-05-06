@@ -22,7 +22,7 @@ folderItems.forEach(item => {
                 const lines = text.trim().split('\n');
                 const title = lines[0];  // перший рядок — назва
                 const wordPairs = lines.slice(1).map(line => {
-                    const [term, def] = line.split("—").map(x => x.trim());
+                    const [term, def] = line.split(" — ").map(x => x.trim());
                     return { term, def };
                 });
 
