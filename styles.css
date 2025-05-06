@@ -8,22 +8,22 @@ body {
 
 .container {
     display: flex;
-    min-height: 100;
+    min-height: 100vh;
     flex-direction: row;
 }
 
 /* Сайдбар */
 .sidebar {
-    width: 260;
+    width: 260px;
     background-color: #e6cba8;
-    padding: 20;
-    box-shadow: 2 0 5 rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
 }
 
 .sidebar h2 {
     margin-top: 0;
-    font-size: 20;
+    font-size: 20px;
 }
 
 /* Список папок */
@@ -34,33 +34,33 @@ body {
 }
 
 .folder {
-    padding: 10 15;
-    margin: 5 0;
+    padding: 10px 15px;
+    margin: 5px 0;
     background-color: #f1d6b6;
-    border-radius: 8;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2, transform 0.2;
+    transition: background-color 0.2s, transform 0.2s;
     position: relative;
 }
 
 .folder:hover {
     background-color: #eac79e;
-    transform: translateX(5);
+    transform: translateX(5px);
 }
 
 .folder.selected {
     background-color: #d2a679;
     color: white;
     font-weight: bold;
-    border: 2 solid #fff;
+    border: 2px solid #fff;
 }
 
 .folder::before {
     content: "▸";
     position: absolute;
-    left: 10;
-    transition: transform 0.2;
-    font-size: 18;
+    left: 10px;
+    transition: transform 0.2s;
+    font-size: 18px;
 }
 
 .folder.expanded::before {
@@ -68,89 +68,89 @@ body {
 }
 
 .folder.subfolder {
-    padding-left: 30;
+    padding-left: 30px;
 }
 
 .folder.subsubfolder {
-    padding-left: 50;
+    padding-left: 50px;
 }
 
 /* Плавне розгортання підпапок */
 .folder-list .folder > ul {
     display: none; /* Сховати підпапки за замовчуванням */
-    margin-top: 5;
+    margin-top: 5px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4 ease-out;
+    transition: max-height 0.4s ease-out;
 }
 
 .folder.expanded > ul {
     display: block;
-    max-height: 1000; /* Збільшено для розгортання */
+    max-height: 1000px; /* Збільшено для розгортання */
 }
 
 /* Основний контент */
 .content {
     flex-grow: 1;
-    padding: 30;
+    padding: 30px;
 }
 
 .content h1 {
-    font-size: 28;
-    margin-bottom: 20;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 /* Список слів */
 .word-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220, 1));
-    gap: 15;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
 }
 
 /* Картки слів */
 .word-card {
     background-color: #fff6e9;
-    border: 1 solid #dec8a2;
-    padding: 15;
-    border-radius: 10;
-    box-shadow: 1 1 4 rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2 ease-in-out;
+    border: 1px solid #dec8a2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s ease-in-out;
 }
 
 .word-card:hover {
-    transform: translateY(-3);
-    box-shadow: 1 1 6 rgba(0, 0, 0, 0.2); /* Збільшено тінь при наведенні */
+    transform: translateY(-3px);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); /* Збільшено тінь при наведенні */
 }
 
 /* Футер */
 footer {
     text-align: center;
-    padding: 20;
+    padding: 20px;
     background-color: #e6cba8;
-    font-size: 16;
+    font-size: 16px;
     color: #6e5344;
-    border-top: 1 solid #dec8a2;
+    border-top: 1px solid #dec8a2;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
 /* Адаптивність для мобільних пристроїв */
-@media (max-width: 768) {
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
 
     .sidebar {
         width: 100%;
-        padding: 15;
+        padding: 15px;
     }
 
     .content {
-        padding: 20;
+        padding: 20px;
     }
 
     .word-list {
-        grid-template-columns: 1; /* Один стовпець для мобільних */
+        grid-template-columns: 1fr; /* Один стовпець для мобільних */
     }
 }
