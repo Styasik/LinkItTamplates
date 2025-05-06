@@ -30,7 +30,7 @@ function buildFolderTree(structure, parentElement, level = 0) {
         if (typeof structure[key] === "object") {
             const subList = document.createElement("ul");
             subList.classList.add("folder-list", "hidden"); // Зробимо вкладені підпапки схованими
-            parentElement.appendChild(subList);
+            item.appendChild(subList);
             buildFolderTree(structure[key], subList, level + 1);
 
             // Показ/сховати вкладені
