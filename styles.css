@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5e6cc;
+    color: #4e342e;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #e6cba8;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.folder-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.folder {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background-color: #f1d6b6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.folder:hover {
+    background-color: #eac79e;
+}
+
+.folder.selected {
+    background-color: #d2a679;
+    color: white;
+    font-weight: bold;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.word-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.word-card {
+    background-color: #fff6e9;
+    border: 1px solid #dec8a2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.word-card:hover {
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 12px;
+    background-color: #e6cba8;
+    font-size: 14px;
+    color: #6e5344;
+    border-top: 1px solid #dec8a2;
+}
