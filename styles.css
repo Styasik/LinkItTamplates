@@ -35,12 +35,13 @@ body {
     background-color: #f1d6b6;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
     position: relative;
 }
 
 .folder:hover {
     background-color: #eac79e;
+    transform: translateX(5px);
 }
 
 .folder.selected {
@@ -54,6 +55,7 @@ body {
     position: absolute;
     left: 10px;
     transition: transform 0.2s;
+    font-size: 18px;
 }
 
 .folder.expanded::before {
@@ -66,6 +68,15 @@ body {
 
 .folder.subsubfolder {
     padding-left: 50px;
+}
+
+.folder-list .folder > ul {
+    display: none; /* Сховати підпапки за замовчуванням */
+    margin-top: 5px;
+}
+
+.folder.expanded > ul {
+    display: block; /* Показати підпапки, якщо папка розгорнута */
 }
 
 .content {

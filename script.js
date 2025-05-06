@@ -29,27 +29,30 @@ function buildFolderTree(structure, parentElement, level = 0) {
         // Якщо це підпапка
         if (typeof structure[key] === "object") {
             const subList = document.createElement("ul");
-            subList.classList.add("folder-list");
+            subList.classList.add("folder-list", "hidden"); // Зробимо вкладені підпапки схованими
             parentElement.appendChild(subList);
             buildFolderTree(structure[key], subList, level + 1);
 
             // Показ/сховати вкладені
-            item.addEventListener("click", () => {
-                subList.classList.toggle("hidden");
-                item.classList.toggle("expanded");
+            item.addEventListener("click", (e) => {
+                e.stopPropagation(); // Запобігаємо поширенню події на батьківські елементи
+                subList.classList.toggle("hidden"); // Показати або сховати підпапки
+                item.classList.toggle("expanded");  // Змінюємо іконку
             });
         }
     }
 }
 
 function loadWords(folderItem) {
+    // Змінюємо вибрану папку
     document.querySelector(".folder.selected")?.classList.remove("selected");
     folderItem.classList.add("selected");
 
     const filePath = folderItem.dataset.file;
     mainTitle.textContent = folderItem.textContent;
-    wordList.innerHTML = "";
+    wordList.innerHTML = ""; // Очищаємо попередній список слів
 
+    // Завантажуємо файл, який відповідає вибраній папці
     fetch(`Words/${filePath}`)
         .then(response => response.text())
         .then(text => {
@@ -59,6 +62,7 @@ function loadWords(folderItem) {
                 return { term, def };
             });
 
+            // Створюємо картки для кожного слова
             wordPairs.forEach(entry => {
                 const div = document.createElement("div");
                 div.className = "word-card";
