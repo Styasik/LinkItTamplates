@@ -2,8 +2,6 @@ const folderList = document.querySelector(".folder-list");
 const wordList = document.querySelector(".word-list");
 const mainTitle = document.querySelector(".content h1");
 
-let selectedFilePath = null; // ✅ Ініціалізація змінної
-
 // Завантажити структуру папок з JSON
 fetch("structure.json")
     .then(response => response.json())
@@ -56,20 +54,25 @@ function buildFolderTree(structure, parentElement, level = 0) {
     }
 }
 
+const startGameButton = document.getElementById("startGameButton");
+let selectedFilePath = null; // ← Ініціалізація
+
 function loadWords(folderItem) {
     document.querySelector(".folder.selected")?.classList.remove("selected");
     folderItem.classList.add("selected");
 
     const filePath = folderItem.dataset.file;
-    selectedFilePath = `https://styasik.github.io/LinkItTamplates/Words/${filePath}`; // ✅ Зберігаємо повний шлях
+    selectedFilePath = filePath;
+    startGameButton.classList.add("enabled");
+    startGameButton.disabled = false;
 
     mainTitle.textContent = folderItem.textContent;
     wordList.innerHTML = "";
 
-    fetch(selectedFilePath)
+    fetch(`Words/${filePath}`)
         .then(response => response.text())
         .then(text => {
-            const lines = text.trim().split("\n").slice(1);
+            const lines = text.trim().split("\n").slice(1); // Пропускаємо заголовок
             const wordPairs = lines.map(line => {
                 const [term, def] = line.split("/").map(x => x.trim());
                 return { term, def };
@@ -84,3 +87,13 @@ function loadWords(folderItem) {
         })
         .catch(err => console.error("Помилка завантаження файлу:", err));
 }
+
+startGameButton.addEventListener("click", () => {
+    if (selectedFilePath) {
+        const encodedPath = encodeURIComponent(selectedFilePath);
+        const deeplink = `linkitwords://loadfile?path=${encodedPath}`;
+        window.location.href = deeplink;
+    } else {
+        alert("Будь ласка, виберіть файл!");
+    }
+});

@@ -111,22 +111,30 @@ body {
     transform: translateY(-3px);
 }
 
-.start-game-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #009578;
+button.start-game {
+    background-color: #4CAF50;
     color: white;
-    font-size: 1.2rem;
     border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-family: inherit;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    display: block;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-.start-game-btn:hover {
-    background-color: #007e66;
+button.start-game.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+button.start-game:hover:enabled {
+    background-color: #45a049;
 }
 
 footer {
