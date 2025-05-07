@@ -54,13 +54,48 @@ function buildFolderTree(structure, parentElement, level = 0) {
     }
 }
 
+const startGameButton = document.getElementById("startGameButton");
+let selectedFilePath = null; // ← Ініціалізація
+
+function loadWords(folderItem) {
+    document.querySelector(".folder.selected")?.classList.remove("selected");
+    folderItem.classList.add("selected");
+
+    const filePath = folderItem.dataset.file;
+    selectedFilePath = filePath;
+    startGameButton.classList.add("enabled");
+    startGameButton.disabled = false;
+
+    mainTitle.textContent = folderItem.textContent;
+    wordList.innerHTML = "";
+
+    fetch(`Words/${filePath}`)
+        .then(response => response.text())
+        .then(text => {
+            const lines = text.trim().split("\n").slice(1); // Пропускаємо заголовок
+            const wordPairs = lines.map(line => {
+                const [term, def] = line.split("/").map(x => x.trim());
+                return { term, def };
+            });
+
+            wordPairs.forEach(entry => {
+                const div = document.createElement("div");
+                div.className = "word-card";
+                div.innerHTML = `<strong>${entry.term}</strong> — ${entry.def}`;
+                wordList.appendChild(div);
+            });
+        })
+        .catch(err => console.error("Помилка завантаження файлу:", err));
+}
+
 startGameButton.addEventListener("click", () => {
     if (selectedFilePath) {
         const fileName = encodeURIComponent(mainTitle.textContent.trim());
         const fileUrl = encodeURIComponent(`https://yourhost.com/Words/${selectedFilePath}`);
-        const deeplink = `linkitwords://loadfile?path=${fileUrl}`;
+        const deeplink = `linkitwords://loadfile?path=${fileUrl}&name=${fileName}`;
         window.location.href = deeplink;
     } else {
         alert("Будь ласка, виберіть файл!");
     }
 });
+
