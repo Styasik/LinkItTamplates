@@ -54,6 +54,13 @@ function buildFolderTree(structure, parentElement, level = 0) {
     }
 }
 
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const sidebar = document.querySelector(".sidebar");
+
+hamburgerBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+
 const startGameButton = document.getElementById("startGameButton");
 let selectedFilePath = null; // ← Ініціалізація
 
