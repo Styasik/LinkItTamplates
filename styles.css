@@ -161,30 +161,18 @@ footer {
 }
 
 /* Мобільна адаптація */
+
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: -260px; /* ховаємо */
-        width: 260px;
-        height: 100%;
-        background-color: #e6cba8;
-        z-index: 1000;
-        transition: left 0.3s ease;
-        display: block; /* завжди є, просто ховається поза екраном */
+        display: none;
     }
 
     .sidebar.open {
-        left: 0; /* показуємо */
-    }
-
-    .hamburger {
         display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1100;
-        width: auto;
     }
 
     .content {
