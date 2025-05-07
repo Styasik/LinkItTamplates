@@ -146,17 +146,32 @@ footer {
     border-top: 1px solid #dec8a2;
 }
 
+.hamburger {
+    display: none;
+    background-color: #d2a679;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Мобільна адаптація */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        min-height: auto;
+    .hamburger {
+        display: block;
     }
 
     .sidebar {
-        width: 100%;
-        padding: 15px;
-        box-shadow: none;
-        border-bottom: 1px solid #dec8a2;
+        display: none;
+    }
+
+    .sidebar.open {
+        display: block;
     }
 
     .content {
