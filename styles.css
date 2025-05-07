@@ -145,3 +145,66 @@ footer {
     color: #6e5344;
     border-top: 1px solid #dec8a2;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        box-shadow: none;
+        border-bottom: 1px solid #dec8a2;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .content h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .folder {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .folder.subfolder {
+        padding-left: 20px;
+    }
+
+    .folder.subsubfolder {
+        padding-left: 30px;
+    }
+
+    .word-list {
+        grid-template-columns: 1fr; /* одна колонка */
+        gap: 10px;
+    }
+
+    .word-card {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button.start-game {
+        width: 90%;
+        font-size: 1em;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
