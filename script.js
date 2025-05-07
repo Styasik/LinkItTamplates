@@ -98,8 +98,8 @@ function loadWords(folderItem) {
 startGameButton.addEventListener("click", () => {
     if (selectedFilePath) {
         const fileName = encodeURIComponent(mainTitle.textContent.trim());
-        const fileUrl = encodeURIComponent(`https://yourhost.com/Words/${selectedFilePath}`);
-        const deeplink = `linkitwords://loadfile?path=${fileUrl}&name=${fileName}`;
+        const fileUrl = encodeURIComponent(`https://styasik.github.io/LinkItTemplates/Words/${selectedFilePath}`);
+        const deeplink = `linkitwords://loadfile?path=${fileUrl}`;
         window.location.href = deeplink;
     } else {
         alert("Будь ласка, виберіть файл!");
