@@ -97,3 +97,10 @@ startGameButton.addEventListener("click", () => {
         alert("Будь ласка, виберіть файл!");
     }
 });
+
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const sidebar = document.querySelector(".sidebar");
+
+hamburgerBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
