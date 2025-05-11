@@ -1,5 +1,0 @@
-Folder4
-Привіт/Hello
-Машина/Car
-Волосипед/Bicycle
-Літак/Plane
