@@ -8,15 +8,15 @@
       "Галицько-Волинська держава": "History/Halychyna.txt"
     },
     "Словацька Мова": {
-        "Дії": "Slovenčina/Action.txt"
-        "Будівлі": "Slovenčina/Buildings.txt"
-        "Емоції": "Slovenčina/Emotions.txt"
-        "Їжа": "Slovenčina/Food.txt"
-        "Предмети": "Slovenčina/Items.txt"
-        "Природа": "Slovenčina/Nature.txt"
-        "Люди": "Slovenčina/People.txt"
-        "Час": "Slovenčina/Time.txt"
-        "Транспорт": "Slovenčina/Transport.txt"
+        "Дії": "Slovenčina/Action.txt",
+        "Будівлі": "Slovenčina/Buildings.txt",
+        "Емоції": "Slovenčina/Emotions.txt",
+        "Їжа": "Slovenčina/Food.txt",
+        "Предмети": "Slovenčina/Items.txt",
+        "Природа": "Slovenčina/Nature.txt",
+        "Люди": "Slovenčina/People.txt",
+        "Час": "Slovenčina/Time.txt",
+        "Транспорт": "Slovenčina/Transport.txt",
         "Інше": "Slovenčina/Others.txt"
     }
 }
