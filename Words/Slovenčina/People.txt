@@ -1,10 +1,68 @@
 Люди
-Autor/Автор
-Mäsiar/М'ясник
-Dievčatko/Дівчинка
-Dcéra/Дочка
-Gazda/Господар
-Fajčiar/Курець
-Farár/Священик
-Tréner/Тренер
-Editor/Редактор
+Люди/Ľudia
+Чоловік/Muž
+Жінка/Žena
+Дитина/Dieťa
+Хлопець/Chlapec
+Дівчина/Dievča
+Друг/Kamarát
+Подруга/Kamarátka
+Бабуся/Stará mama
+Дідусь/Starý otec
+Мама/Mama
+Тато/Otec
+Сім'я/Rodina
+Студент/Študent
+Учень/Žiak
+Вчитель/Učiteľ
+Медсестра/Zdravotná sestra
+Лікар/Lekár
+Письменник/Spisovateľ
+Поліцейський/Policajt
+Офіціант/Čašník
+Брат/Brat
+Сестра/Sestra
+Дочка/Dcéra
+Син/Syn
+Онука/Vnučka
+Онук/Vnuk
+Теща/Svokra
+Зять/Zať
+Колега/Kolega
+Однокласник/Spolužiak
+Двоюрідна сестра/Sesternica
+Двоюрідний брат/Bratanec
+Дядько(з боку батька)/Strýko
+Тітка(з боку батька)/Strýna
+Дядько(з боку матері)/Ujo
+Тітка(з боку матері)/Teta
+Батьки/Rodičia
+Брат чи сестра/Súrodenec
+Нащадок/Potomok
+Племінник/Synovec
+Племінниця/Neter
+Немовля/Bábätko
+Підліток/Tínedžer
+Дорослий/Dospelý
+Пенсіонер/Dôchodca
+Пацієнт/Pacient
+Клієнт/Zákazník
+Військовий/Vojak
+Сусід/Sused
+Гість/Hosť
+Кухар/Kuchár
+Перукар/Holič
+Актор/Herec
+Музикант/Hudobník
+Співак/Spevák
+Спортсмен/Športovec
+Художник/Umelec
+Водій/Vodič
+Будівельник/Stavbár
+Фермер/Farmár
+Робітник/Robotník
+Інженер/Inžinier
+Програміст/Programátor
+Бізнесмен/Podnikateľ
+Політик/Politik
+Президент/Prezident
