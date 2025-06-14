@@ -1,0 +1,23 @@
+Навчання
+Навчання/Štúdium
+Освіта/Vzdelávanie
+Урок/Hodina
+Книга/Kniha
+Зошит/Zoznam
+Олівець/Ceruzka
+Ручка/Pero
+Гумка/Guma
+Рюкзак/Batoh
+Речення/Veta
+Слово/Slovo
+Літера/Písmeno
+Предмет/Predmet
+Іспит/Skúška
+Оцінка/Známka
+Вчитися/Učiť sa
+Вивчати/Študovať
+Дошка/Tabuľa
+Словник/Slovník
+Парта/Lavica
+Клас/Trieda
+

@@ -1,0 +1,7 @@
+Покупки
+Магазин/Obchod
+Супермаркет/Supermarket
+Ціна/Cena
+Гроші/Peniaze
+Каса/Pokladňa
+Продавець/Predavač

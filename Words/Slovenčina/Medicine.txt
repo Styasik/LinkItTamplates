@@ -1,0 +1,25 @@
+Медицина
+Медицина/Medicína
+Здоров'я/Zdravie
+Лікар/Lekár
+Медсестра/Sestra
+Лікарня/Nemocnica
+Аптека/Lekáreň
+Таблетка/Tableta
+Ін’єкція/Injekcia
+Градусник/Teplomer
+Температура/Teplota
+Біль/Bolesť
+Голова/ Hlava
+Живіт/Brucho
+Нога/Noha
+Рука/Ruka
+Серце/Srdce
+Кров/Krv
+Дихання/Dýchanie
+Кашель/Kašeľ
+Хвороба/Choroba
+Лікування/Liečba
+Рецепт/Recept
+Медсестра/Zdravotná sestra
+Лікар/Lekár
