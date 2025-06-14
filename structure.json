@@ -16,7 +16,13 @@
         "Природа": "Slovenčina/Nature.txt",
         "Люди": "Slovenčina/People.txt",
         "Час": "Slovenčina/Time.txt",
-        "Транспорт": "Slovenčina/Transport.txt",
+        "Подорожі та Транспорт": "Slovenčina/Travelings and Transport.txt",
+        "Тварини": "Slovenčina/Animals.txt",
+        "Одяг": "Slovenčina/Clothes.txt",
+        "Дім": "Slovenčina/House.txt",
+        "Медицина": "Slovenčina/Medicine.txt"
+        "Покупки": "Slovenčina/Shopping.txt"
+        "Навчання": "Slovenčina/Studying.txt"
         "Інше": "Slovenčina/Others.txt"
     }
 }
