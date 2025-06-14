@@ -20,9 +20,9 @@
         "Тварини": "Slovenčina/Animals.txt",
         "Одяг": "Slovenčina/Clothes.txt",
         "Дім": "Slovenčina/House.txt",
-        "Медицина": "Slovenčina/Medicine.txt"
-        "Покупки": "Slovenčina/Shopping.txt"
-        "Навчання": "Slovenčina/Studying.txt"
+        "Медицина": "Slovenčina/Medicine.txt",
+        "Покупки": "Slovenčina/Shopping.txt",
+        "Навчання": "Slovenčina/Studying.txt",
         "Інше": "Slovenčina/Others.txt"
     }
 }
