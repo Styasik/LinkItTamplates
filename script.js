@@ -2,6 +2,8 @@ const folderList = document.querySelector(".folder-list");
 const wordList = document.querySelector(".word-list");
 const mainTitle = document.querySelector(".content h1");
 
+let isWordsFile = true;
+
 // Завантажити структуру папок з JSON
 fetch("wordStructure.json")
     .then(response => response.json())
@@ -45,7 +47,7 @@ function buildFolderTree(structure, parentElement, areWords, level = 0) {
             const subList = document.createElement("ul");
             subList.classList.add("folder-list", "hidden");
             parentElement.appendChild(subList);
-            buildFolderTree(structure[key], subList, level + 1);
+            buildFolderTree(structure[key], subList, areWords, level + 1);
 
             item.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -72,6 +74,8 @@ const startGameButton = document.getElementById("startGameButton");
 let selectedFilePath = null; // ← Ініціалізація
 
 function loadElements(folderItem, areWords) {
+    isWordsFile = areWords;
+
     document.querySelector(".folder.selected")?.classList.remove("selected");
     folderItem.classList.add("selected");
 
@@ -83,11 +87,7 @@ function loadElements(folderItem, areWords) {
     mainTitle.textContent = folderItem.textContent;
     wordList.innerHTML = "";
 
-    var folderName;
-    if (areWords == true)
-        folderName = "Words";
-    else
-        folderName = "Images";
+    const folderName = isWordsFile ? "Words" : "Images";
 
     fetch(`${folderName}/${filePath}`)
         .then(response => response.text())
@@ -112,7 +112,7 @@ function loadElements(folderItem, areWords) {
                 pairs.forEach(entry => {
                     const div = document.createElement("div");
                     div.className = "word-card";
-                    div.innerHTML = `<img src="Photos/${entry.url}" alt="${entry.name}"><strong>${entry.name}</strong>`;
+                    div.innerHTML = `<img src="Photos/${entry.first}" alt="${entry.second}"><strong>${entry.second}</strong>`;
                     wordList.appendChild(div);
                 });
             }
@@ -122,8 +122,8 @@ function loadElements(folderItem, areWords) {
 
 startGameButton.addEventListener("click", () => {
     if (selectedFilePath) {
-        const fileName = encodeURIComponent(mainTitle.textContent.trim());
-        const fileUrl = encodeURIComponent(`https://styasik.github.io/LinkItTemplates/Words/${selectedFilePath}`);
+        const folderName = isWordsFile ? "Words" : "Images";
+        const fileUrl = encodeURIComponent(`https://styasik.github.io/LinkItTemplates/${folderName}/${selectedFilePath}`);
         const deeplink = `linkitwords://loadfile?path=${fileUrl}`;
         window.location.href = deeplink;
     } else {
