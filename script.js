@@ -10,7 +10,7 @@ fetch("wordStructure.json")
     })
     .catch(err => console.error("Помилка завантаження структури:", err));
 
-fetch("imageStructure.json.json")
+fetch("imageStructure.json")
     .then(response => response.json())
     .then(structure => {
         buildFolderTree(structure, folderList, false);
