@@ -83,7 +83,13 @@ function loadElements(folderItem, areWords) {
     mainTitle.textContent = folderItem.textContent;
     wordList.innerHTML = "";
 
-    fetch(`Words/${filePath}`)
+    folderName;
+    if (areWords)
+        folderName = "Words";
+    else
+        folderName = "Images"
+
+    fetch(`${folderName}/${filePath}`)
         .then(response => response.text())
         .then(text => {
             const lines = text.trim().split("\n").slice(1); // Пропускаємо заголовок
