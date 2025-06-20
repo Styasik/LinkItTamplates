@@ -110,7 +110,7 @@ function loadElements(folderItem, areWords) {
                     wordList.appendChild(div);
                 });
             }
-            });
+            })
         .catch(err => console.error("Помилка завантаження файлу:", err));
 }
 
