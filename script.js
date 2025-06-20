@@ -106,7 +106,7 @@ function loadElements(folderItem, areWords) {
                 pairs.forEach(entry => {
                     const div = document.createElement("div");
                     div.className = "word-card";
-                    div.innerHTML = `<img src="${entry.url}" alt="${entry.name}"><strong>${entry.name}</strong>`;
+                    div.innerHTML = `<img src="$Photos/{entry.url}" alt="${entry.name}"><strong>${entry.name}</strong>`;
                     wordList.appendChild(div);
             }
 
