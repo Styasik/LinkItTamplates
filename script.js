@@ -3,14 +3,21 @@ const wordList = document.querySelector(".word-list");
 const mainTitle = document.querySelector(".content h1");
 
 // Завантажити структуру папок з JSON
-fetch("structure.json")
+fetch("wordStructure.json")
     .then(response => response.json())
     .then(structure => {
-        buildFolderTree(structure, folderList);
+        buildFolderTree(structure, folderList, true);
     })
     .catch(err => console.error("Помилка завантаження структури:", err));
 
-function buildFolderTree(structure, parentElement, level = 0) {
+fetch("imageStructure.json.json")
+    .then(response => response.json())
+    .then(structure => {
+        buildFolderTree(structure, folderList, false);
+    })
+    .catch(err => console.error("Помилка завантаження структури:", err));
+
+function buildFolderTree(structure, parentElement, areWords, level = 0) {
     for (const key in structure) {
         const item = document.createElement("li");
         item.classList.add("folder");
@@ -31,7 +38,7 @@ function buildFolderTree(structure, parentElement, level = 0) {
 
         if (typeof structure[key] === "string") {
             item.dataset.file = structure[key];
-            item.addEventListener("click", () => loadWords(item));
+            item.addEventListener("click", () => loadElements(item, areWords));
         }
 
         if (typeof structure[key] === "object") {
@@ -64,7 +71,7 @@ hamburgerBtn.addEventListener("click", () => {
 const startGameButton = document.getElementById("startGameButton");
 let selectedFilePath = null; // ← Ініціалізація
 
-function loadWords(folderItem) {
+function loadElements(folderItem, areWords) {
     document.querySelector(".folder.selected")?.classList.remove("selected");
     folderItem.classList.add("selected");
 
@@ -80,17 +87,29 @@ function loadWords(folderItem) {
         .then(response => response.text())
         .then(text => {
             const lines = text.trim().split("\n").slice(1); // Пропускаємо заголовок
-            const wordPairs = lines.map(line => {
-                const [term, def] = line.split("/").map(x => x.trim());
-                return { term, def };
+            const pairs = lines.map(line => {
+                const [first, second] = line.split("/").map(x => x.trim());
+                return { first, second };
             });
 
-            wordPairs.forEach(entry => {
-                const div = document.createElement("div");
-                div.className = "word-card";
-                div.innerHTML = `<strong>${entry.term}</strong> — ${entry.def}`;
-                wordList.appendChild(div);
+            if (areWords == true)
+            {
+                pairs.forEach(entry => {
+                    const div = document.createElement("div");
+                    div.className = "word-card";
+                    div.innerHTML = `${entry.first} — <strong>${entry.second}</strong>`;
+                    wordList.appendChild(div);
             });
+            }
+            else 
+            {
+                pairs.forEach(entry => {
+                    const div = document.createElement("div");
+                    div.className = "word-card";
+                    div.innerHTML = `<img src="${entry.url}" alt="${entry.name}"><strong>${entry.name}</strong>`;
+                    wordList.appendChild(div);
+            }
+
         })
         .catch(err => console.error("Помилка завантаження файлу:", err));
 }
