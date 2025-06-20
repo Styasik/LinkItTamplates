@@ -84,10 +84,10 @@ function loadElements(folderItem, areWords) {
     wordList.innerHTML = "";
 
     var folderName;
-    if (areWords)
+    if (areWords == true)
         folderName = "Words";
     else
-        folderName = "Images"
+        folderName = "Images";
 
     fetch(`${folderName}/${filePath}`)
         .then(response => response.text())
