@@ -83,7 +83,7 @@ function loadElements(folderItem, areWords) {
     mainTitle.textContent = folderItem.textContent;
     wordList.innerHTML = "";
 
-    folderName;
+    var folderName;
     if (areWords)
         folderName = "Words";
     else
