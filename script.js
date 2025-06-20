@@ -108,9 +108,9 @@ function loadElements(folderItem, areWords) {
                     div.className = "word-card";
                     div.innerHTML = `<img src="$Photos/{entry.url}" alt="${entry.name}"><strong>${entry.name}</strong>`;
                     wordList.appendChild(div);
-            }
+                });
 
-        })
+            });
         .catch(err => console.error("Помилка завантаження файлу:", err));
 }
 
