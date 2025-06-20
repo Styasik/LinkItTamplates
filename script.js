@@ -105,7 +105,7 @@ function loadElements(folderItem, areWords) {
                 pairs.forEach(entry => {
                     const div = document.createElement("div");
                     div.className = "word-card";
-                    div.innerHTML = `${entry.first} \n— \n<strong>${entry.second}</strong>`;
+                    div.innerHTML = `${entry.first} <br>—<br> <strong>${entry.second}</strong>`;
                     wordList.appendChild(div);
             });
             }
